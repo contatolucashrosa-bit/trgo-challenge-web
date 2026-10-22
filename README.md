@@ -158,7 +158,7 @@ A experiência começa com a apresentação dos autores e, em seguida, libera a 
 
 ## ⚙️ Requisitos
 
-- Node.js 20 ou superior
+- Node.js 24 (LTS)
 - npm 10 ou superior
 
 ---

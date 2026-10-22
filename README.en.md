@@ -158,7 +158,7 @@ The experience starts with the authors' introduction and then unlocks the choice
 
 ## ⚙️ Requirements
 
-- Node.js 20 or newer
+- Node.js 24 (LTS)
 - npm 10 or newer
 
 ---
