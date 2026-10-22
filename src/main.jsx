@@ -497,13 +497,7 @@ function App() {
           )}
         </nav>
         <div className="event-title">
-          <span>Torneio</span>
-          <strong className="event-word">
-            {'TRGO'.split('').map((letter) => (
-              <i key={letter}>{letter}</i>
-            ))}
-          </strong>
-          <span>2026</span>
+          <img src={assetPath('/logo-trgo.png')} alt="TRGO — Torneio de Robótica Grande Oeste" />
         </div>
         <div className="class-number">302</div>
         <button className="audio" onClick={() => setSoundEnabled((enabled) => !enabled)} aria-label={soundEnabled ? 'Desativar sons' : 'Ativar sons'}>
