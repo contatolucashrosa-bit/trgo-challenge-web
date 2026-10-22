@@ -116,14 +116,6 @@ const vaultChallenges = [
   },
 ];
 
-const trickSteps = [
-  ['Pense em qualquer número.', 'Não conte para ninguém.'],
-  ['Multiplique esse número por 2.', 'Guarde o novo resultado.'],
-  ['Some 14 ao resultado.', 'Mais um passo...'],
-  ['Divida o total por 2.', 'Estamos quase lá.'],
-  ['Subtraia o número que você pensou no início.', 'Concentre-se no resultado.'],
-];
-
 const levelInfo = {
   easy: ['Ache o número', 'Identifique o padrão e complete a sequência.', 'Escolha uma peça e encaixe no espaço vazio.', '1 — 3 — 5 — ? → 7', '30 segundos'],
   medium: ['Chegue ao número', 'Construa uma expressão que alcance o objetivo.', 'Use todos os números exatamente uma vez. Operadores podem se repetir.', '2, 3, 5 e 6 → 6 × 3 − 5 + 2 = 15', '60 segundos'],
@@ -275,7 +267,6 @@ function formatTime(seconds) {
 
 function App() {
   const [screen, setScreen] = useState('welcome');
-  const [trickStep, setTrickStep] = useState(0);
   const [level, setLevel] = useState(null);
   const [challengeIndex, setChallengeIndex] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -363,7 +354,6 @@ function App() {
 
   function goHome() {
     setScreen('welcome');
-    setTrickStep(0);
     setLevel(null);
     setAnswerSlots([]);
     setExpressionParts([]);
@@ -374,14 +364,7 @@ function App() {
   }
 
   function goBack() {
-    if (screen === 'trick') {
-      if (trickStep > 0) setTrickStep((current) => current - 1);
-      else setScreen('welcome');
-    } else if (screen === 'reveal') {
-      setTrickStep(4);
-      setScreen('trick');
-    } else if (screen === 'explain') setScreen('reveal');
-    else if (screen === 'choose') setScreen('explain');
+    if (screen === 'choose') setScreen('welcome');
     else if (screen === 'brief') setScreen('choose');
     else if (screen === 'play') setScreen('brief');
     else if (screen === 'failed' || screen === 'result') setScreen('choose');
@@ -513,9 +496,9 @@ function App() {
           )}
         </nav>
         <div className="event-title">
-          <span>Mostra</span>
-          <strong className="steam-word">
-            {'STEAM'.split('').map((letter) => (
+          <span>Torneio</span>
+          <strong className="event-word">
+            {'TRGO'.split('').map((letter) => (
               <i key={letter}>{letter}</i>
             ))}
           </strong>
@@ -539,11 +522,11 @@ function App() {
         {screen === 'welcome' && (
           <>
             <h1>
-              DESAFIO
+              TRGO
               <br />
-              <b>DOS NÚMEROS</b>
+              <b>CHALLENGE</b>
             </h1>
-            <p className="lead">Uma experiência de lógica, estratégia e raciocínio matemático.</p>
+            <p className="lead">Desafios de lógica e raciocínio matemático para os competidores do Torneio de Robótica Grande Oeste.</p>
             <div className="people">
               <ProfileCard image={assetPath('/augusto.png')} name="Augusto Belini" surname="Gasparetto" />
               <ProfileCard image={assetPath('/lucas.jpg')} name="Lucas Hochmann" surname="Rosa" />
@@ -553,90 +536,13 @@ function App() {
             <button
               className="primary"
               onClick={() => {
-                setScreen('trick');
+                setScreen('choose');
                 playTone('start', soundEnabled);
               }}
             >
               COMEÇAR EXPERIÊNCIA <ArrowRight />
             </button>
           </>
-        )}
-
-        {screen === 'trick' && (
-          <div className="panel">
-            <div className="eyebrow">PASSO {trickStep + 1} DE 5</div>
-            <div className="orb">{trickStep + 1}</div>
-            <h2>{trickSteps[trickStep][0]}</h2>
-            <p>{trickSteps[trickStep][1]}</p>
-            <div className="dots">
-              {trickSteps.map((_, index) => (
-                <i key={index} className={index <= trickStep ? 'on' : ''} />
-              ))}
-            </div>
-            <button
-              className="primary"
-              onClick={() => {
-                playTone('step', soundEnabled);
-                if (trickStep < 4) setTrickStep((current) => current + 1);
-                else setScreen('reveal');
-              }}
-            >
-              {trickStep < 4 ? 'PRÓXIMO PASSO' : 'VER RESULTADO'} <ArrowRight />
-            </button>
-          </div>
-        )}
-
-        {screen === 'reveal' && (
-          <div className="panel">
-            {trickStep === 7 ? (
-              <>
-                <div className="seven">7</div>
-                <h2>O seu resultado é 7?</h2>
-                <p>Não foi mágica. Foi matemática.</p>
-                <button className="primary" onClick={() => setScreen('explain')}>
-                  DESCOBRIR O SEGREDO <ArrowRight />
-                </button>
-              </>
-            ) : (
-              <>
-                <h2>Eu já sei o seu resultado...</h2>
-                <button
-                  className="primary"
-                  onClick={() => {
-                    setTrickStep(7);
-                    playTone('victory', soundEnabled);
-                  }}
-                >
-                  REVELAR
-                </button>
-              </>
-            )}
-          </div>
-        )}
-
-        {screen === 'explain' && (
-          <div className="panel explanation">
-            <div className="eyebrow">O SEGREDO DO TRUQUE</div>
-            <h2>Por que sempre dá 7?</h2>
-            <div className="formula">
-              {['n', '2n', '2n + 14', 'n + 7', '7'].map((item, index) => (
-                <React.Fragment key={item}>
-                  <span>{item}</span>
-                  {index < 4 && <b>→</b>}
-                </React.Fragment>
-              ))}
-            </div>
-            <p>Ao dividir por 2, o número inicial volta a aparecer junto de 7. Quando você subtrai o número inicial, ele se cancela e sobra apenas 7.</p>
-            <button
-              className="primary"
-              onClick={() => {
-                playTone('start', soundEnabled);
-                setScreen('choose');
-              }}
-            >
-              IR AOS DESAFIOS <ArrowRight />
-            </button>
-          </div>
         )}
 
         {screen === 'choose' && (
@@ -825,7 +731,6 @@ function App() {
 
         {screen === 'thanks' && (
           <div className="panel">
-            <div className="orb">7</div>
             <div className="eyebrow">EXPERIÊNCIA CONCLUÍDA</div>
             <h2>Obrigado por participar!</h2>
             <p>Os números estão em todos os lugares. O desafio é descobrir o que eles podem fazer.</p>
