@@ -1,8 +1,8 @@
-# 🧮 Desafio dos Números
+# 🤖 TRGO Challenge
 
 <p align="center">
-  <a href="https://github.com/lucas-hochmann-rosa/steam-challenge-web">
-    <img src="https://img.shields.io/badge/GitHub-steam--challenge--web-181717?style=for-the-badge&logo=github">
+  <a href="https://github.com/contatolucashrosa-bit/trgo-challenge-web">
+    <img src="https://img.shields.io/badge/GitHub-trgo--challenge--web-181717?style=for-the-badge&logo=github">
   </a>
   <a href="https://www.linkedin.com/in/lucas-hochmann-rosa">
     <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin">
@@ -20,15 +20,15 @@
 
 <p align="center">🇧🇷 Português · <a href="README.en.md">🇺🇸 English</a></p>
 
-> Experiência interativa de lógica matemática criada para a **Mostra STEAM 2026** da Escola SESI Chapecó.
+> Desafios matemáticos interativos criados por alunos da Escola SESI Chapecó para os competidores do **TRGO 2026 — Torneio de Robótica Grande Oeste**.
 
 ---
 
 ## ⚡ Início
 
 ```bash
-git clone https://github.com/lucas-hochmann-rosa/steam-challenge-web.git
-cd steam-challenge-web
+git clone https://github.com/contatolucashrosa-bit/trgo-challenge-web.git
+cd trgo-challenge-web
 npm install
 npm run dev
 ```
@@ -44,15 +44,14 @@ npm start
 
 ## 📌 Visão Geral
 
-O **Desafio dos Números** é um site/jogo educativo feito para uma apresentação presencial. A experiência conduz o visitante por um truque matemático inicial e, depois, libera desafios de raciocínio em três níveis: sequência numérica, construção de expressões e senha lógica.
+O **TRGO Challenge** é um site/jogo educativo feito para entreter e desafiar os competidores do **TRGO (Torneio de Robótica Grande Oeste)**, competição regional de robótica, programação e engenharia promovida pelo SESI/SC, realizada em 23 de outubro de 2026 no SENAI Chapecó. Após a apresentação dos autores, a experiência leva o visitante direto aos desafios de raciocínio em três níveis: sequência numérica, construção de expressões e senha lógica.
 
-O projeto foi desenvolvido por **Lucas Hochmann Rosa**. **Augusto Belini Gasparetto** e **Maria Paula Rossetti Siqueira** integram o grupo de apresentação da Mostra STEAM 2026.
+O projeto foi desenvolvido por **Lucas Hochmann Rosa**. **Augusto Belini Gasparetto** e **Maria Paula Rossetti Siqueira** completam o grupo de alunos da Escola SESI Chapecó que conduz os desafios durante o torneio.
 
 ---
 
 ## ✨ Principais Funcionalidades
 
-- Truque matemático guiado com revelação e explicação algébrica.
 - Três modos de desafio: fácil, médio e difícil.
 - Cronômetro com tempo-alvo por dificuldade.
 - Validação de resposta e fluxo de tentativa com ou sem premiação.
@@ -83,7 +82,7 @@ O projeto foi desenvolvido por **Lucas Hochmann Rosa**. **Augusto Belini Gaspare
 ## 🏗️ Arquitetura
 
 ```text
-steam-challenge-web/
+trgo-challenge-web/
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -137,7 +136,7 @@ steam-challenge-web/
 
 ## 🎲 Dinâmica da experiência
 
-A experiência começa com um truque matemático guiado. O participante escolhe um número, segue operações simples e chega ao resultado 7. Em seguida, a aplicação mostra o motivo algébrico do truque e libera três dificuldades:
+A experiência começa com a apresentação dos autores e, em seguida, libera a escolha entre três dificuldades:
 
 | Nível | Dinâmica | Tempo-alvo |
 | --- | --- | --- |
@@ -220,7 +219,7 @@ O workflow `.github/workflows/deploy-pages.yml` publica a pasta `dist` quando ho
 Endereço esperado após o deploy:
 
 ```text
-https://lucas-hochmann-rosa.github.io/steam-challenge-web/
+https://contatolucashrosa-bit.github.io/trgo-challenge-web/
 ```
 
 No GitHub, a página deve usar **GitHub Actions** como origem do Pages.
@@ -229,7 +228,7 @@ No GitHub, a página deve usar **GitHub Actions** como origem do Pages.
 
 ## ⚠️ Avisos
 
-Este projeto foi criado para uma apresentação escolar e não representa uma página oficial da Escola SESI. Logos e imagens institucionais aparecem apenas no contexto do trabalho da Mostra STEAM 2026.
+Este projeto foi criado para uma apresentação escolar e não representa uma página oficial da Escola SESI. Também não é uma página oficial do TRGO. Logos e imagens institucionais aparecem apenas no contexto da atividade apresentada no TRGO 2026.
 
 O diretório `dist/` é gerado pelo build e não deve ser versionado.
 
@@ -245,8 +244,8 @@ Licenciado sob MIT. Sinta-se livre para usar, modificar e distribuir, mantendo o
 
 **Lucas Hochmann Rosa**
 
-- Repositório: <https://github.com/lucas-hochmann-rosa/steam-challenge-web>
-- GitHub: <https://github.com/lucas-hochmann-rosa>
+- Repositório: <https://github.com/contatolucashrosa-bit/trgo-challenge-web>
+- GitHub: <https://github.com/contatolucashrosa-bit>
 - LinkedIn: <https://www.linkedin.com/in/lucas-hochmann-rosa>
 
 Grupo de apresentação: Lucas Hochmann Rosa, Augusto Belini Gasparetto e Maria Paula Rossetti Siqueira.
