@@ -487,7 +487,8 @@ function App() {
               <i>Reiniciar</i>
             </button>
           ) : (
-            screen !== 'welcome' && (
+            screen !== 'welcome' &&
+            screen !== 'choose' && (
               <button className="navbtn" onClick={goHome} aria-label="Ir para o início">
                 <Home />
                 <i>Início</i>
