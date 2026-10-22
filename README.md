@@ -114,9 +114,8 @@ trgo-challenge-web/
 | `src/main.jsx` | Aplicação React, telas, estados e regras dos desafios. |
 | `src/styles.css` | Estilos exportados da experiência original. |
 | `public/` | Imagens e ícones servidos diretamente pelo navegador. |
-| `vite.config.js` | Configuração do Vite, incluindo base automática para GitHub Pages. |
+| `vite.config.js` | Configuração do Vite com o plugin do React. |
 | `vercel.json` | Configuração de build e saída para deploy na Vercel. |
-| `.github/workflows/deploy-pages.yml` | Publicação automática no GitHub Pages a partir da branch `main`. |
 
 ---
 
@@ -212,17 +211,13 @@ O arquivo `vercel.json` já define:
 | Diretório de saída | `dist` |
 | Framework | `vite` |
 
-### GitHub Pages
+A Vercel publica automaticamente a cada push na branch `main`.
 
-O workflow `.github/workflows/deploy-pages.yml` publica a pasta `dist` quando houver push na branch `main`.
-
-Endereço esperado após o deploy:
+Endereço em produção:
 
 ```text
-https://contatolucashrosa-bit.github.io/trgo-challenge-web/
+https://trgo-challenge-web.vercel.app/
 ```
-
-No GitHub, a página deve usar **GitHub Actions** como origem do Pages.
 
 ---
 

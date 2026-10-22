@@ -2,7 +2,7 @@
   "name": "trgo-challenge-web",
   "version": "1.0.0",
   "private": false,
-  "homepage": "https://contatolucashrosa-bit.github.io/trgo-challenge-web/",
+  "homepage": "https://trgo-challenge-web.vercel.app/",
   "type": "module",
   "description": "Desafios matematicos interativos criados por alunos da Escola SESI Chapeco para os competidores do TRGO 2026 (Torneio de Robotica Grande Oeste).",
   "author": "Lucas Hochmann Rosa <contato.lucashrosa@gmail.com>",
@@ -15,7 +15,6 @@
     "build": "vite build",
     "start": "vite preview",
     "preview": "vite preview",
-    "preview:pages": "vite build --base=/trgo-challenge-web/ && vite preview",
     "lint": "eslint .",
     "check": "npm run lint && npm run build"
   },
